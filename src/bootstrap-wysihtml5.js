@@ -79,6 +79,15 @@
                   "</div>" +
                 "</li>",
 
+            "justify":
+                "<li>" +
+                    "<div class='btn-group'>" +
+                    "<a class='btn' data-wysihtml5-command='justifyLeft' title='" + locale.justify.left + "'><i class='icon-align-left'></i></a>" +
+                    "<a class='btn' data-wysihtml5-command='justifyCenter' title='" + locale.justify.center + "'><i class='icon-align-center'></i></a>" +
+                    "<a class='btn' data-wysihtml5-command='justifyRight' title='" + locale.justify.right + "'><i class='icon-align-right'></i></a>" +
+                    "</div>" +
+                "</li>",
+
             "color":
                 "<li class='dropdown'>" +
                   "<a class='btn dropdown-toggle' data-toggle='dropdown' href='#'>" +
@@ -334,7 +343,7 @@
             return methods.init.apply( this, arguments );
         } else {
             $.error( 'Method ' +  method + ' does not exist on jQuery.wysihtml5' );
-        }    
+        }
     };
 
     $.fn.wysihtml5.Constructor = Wysihtml5;
@@ -343,6 +352,7 @@
         "font-styles": true,
         "color": false,
         "emphasis": true,
+        "justify": true,
         "lists": true,
         "html": false,
         "link": true,
@@ -367,6 +377,9 @@
                 "wysiwyg-color-teal" : 1,
                 "wysiwyg-color-aqua" : 1,
                 "wysiwyg-color-orange" : 1,
+                "wysiwyg-text-align-left": 1,
+                "wysiwyg-text-align-center": 1,
+                "wysiwyg-text-align-right": 1
             },
             tags: {
                 "b":  {},
@@ -401,7 +414,7 @@
                 "div": 1
             }
         },
-        stylesheets: ["./lib/css/wysiwyg-color.css"], // (path_to_project/lib/css/wysiwyg-color.css)
+        stylesheets: [], // (path_to_project/lib/css/wysiwyg-color.css)
         locale: "en"
     };
 
@@ -435,6 +448,11 @@
             image: {
                 insert: "Insert image",
                 cancel: "Cancel"
+            },
+            justify: {
+                left: "Align left",
+                center: "Align center",
+                right: "Align right"
             },
             html: {
                 edit: "Edit HTML"
