@@ -414,7 +414,7 @@
                 "div": 1
             }
         },
-        stylesheets: [], // (path_to_project/lib/css/wysiwyg-color.css)
+        stylesheets: ['/static/css/wysiwyg-color.css'], // (path_to_project/lib/css/wysiwyg-color.css)
         locale: "en"
     };
 
